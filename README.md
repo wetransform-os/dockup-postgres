@@ -1,21 +1,17 @@
 dockup-postgres
 ============
 
-[![Docker Automated buil](https://img.shields.io/docker/automated/mimicmobile/dockup-postgres.svg)](https://hub.docker.com/r/mimicmobile/dockup-postgres/)
-[![Docker Stars](https://img.shields.io/docker/stars/mimicmobile/dockup-postgres.svg)](https://hub.docker.com/r/mimicmobile/dockup-postgres/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/mimicmobile/dockup-postgres.svg)](https://hub.docker.com/r/mimicmobile/dockup-postgres/)
-[![](https://images.microbadger.com/badges/image/mimicmobile/dockup-postgres.svg)](https://microbadger.com/images/mimicmobile/dockup-postgres "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/commit/mimicmobile/dockup-postgres.svg)](https://microbadger.com/images/mimicmobile/dockup-postgres "Get your own commit badge on microbadger.com")
+[![Docker Hub Badge](https://img.shields.io/badge/Docker-Hub%20Hosted-blue.svg)](https://hub.docker.com/r/wetransform/dockup-postgres/)
 
-This is based on [dockup-mongo](https://github.com/robbyoconnor/dockup-mongo) but for postgres.
+This is based on [dockup-mongo](https://github.com/robbyoconnor/dockup-mongo) (which was based on [dockup-mongo](https://github.com/wetransform-os/dockup-mongo) but for postgres.
 Docker image to backup/restore your PostgreSQL DB to AWS S3.
-Builds upon [dockup](https://github.com/mimicmobile/dockup).
+Builds upon [dockup](https://github.com/wetransform-os/dockup).
 
 Configuration
 -------------
 
-This Docker image uses `pg_dump` to create a PostgreSQL database dump and backup or restore it with [dockup](https://github.com/mimicmobile/dockup).
-Please see the [dockup](https://github.com/mimicmobile/dockup) repository for extended information on configuration options, for instance on how to configure encryption with GnuPG.
+This Docker image uses `pg_dump` to create a PostgreSQL database dump and backup or restore it with [dockup](https://github.com/wetransform-os/dockup).
+Please see the [dockup](https://github.com/wetransform-os/dockup) repository for extended information on configuration options, for instance on how to configure encryption with GnuPG.
 
 The following PostgreSQL specific configuration options have been added:
 
@@ -36,7 +32,7 @@ The following *dockup* environment variables should **not be overriden** if usin
 * **PATHS_TO_BACKUP**
 
 ### Example
-This is what a postgres and backup service might look like in `docker-compose.yaml`.  Note the `dockup-postgres` specific variables in addition to others needed by [dockup](https://github.com/mimicmobile/dockup)
+This is what a postgres and backup service might look like in `docker-compose.yaml`.  Note the `dockup-postgres` specific variables in addition to others needed by [dockup](https://github.com/wetransform-os/dockup)
 ```
     backup:
       links:
