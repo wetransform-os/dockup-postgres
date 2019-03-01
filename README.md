@@ -21,8 +21,12 @@ The following PostgreSQL specific configuration options have been added:
 * **POSTGRES_PASS** - the password of your postgres database.
 * **POSTGRES_DB** - the database name to dump. (defaults to `postgres`)
 * **POSTGRES_DUMP_EXTRA_OPTS** - the extra options to pass to pg_dump command
+* **POSTGRES_RESTORE_EXTRA_OPTS** - the extra options to pass to pg_restore command
 
 Usually you will link your PostgreSQL container to the *dockup* container.
+
+For an example runnning backup and restore, see the `./test-backup.sh` script.
+Before running it, ensure there is a file `test-env.txt` with configuration options as in `test-env.txt.sample`.
 
 The following *dockup* environment variables should **not be overriden** if using the specialised PostgreSQL (dockup-postgres) image:
 
