@@ -1,11 +1,14 @@
-FROM mimicmobile/dockup:latest
-LABEL maintainer="Jeff Corcoran <jcorcoran+github@gmail.com>"
+FROM wetransform/dockup:latest
+MAINTAINER Simon Templer <simon@wetransform.to>
+
+# add build info - see hooks/build and https://github.com/opencontainers/image-spec/blob/master/annotations.md
 ARG BUILD_DATE
 ARG VCS_REF
+ARG VCS_URL
+LABEL org.opencontainers.image.created=$BUILD_DATE \
+  org.opencontainers.image.source=$VCS_URL \
+  org.opencontainers.image.revision=$VCS_REF
 
-LABEL org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.vcs-url="https://github.com/mimicmobile/dockup-postgres.git" \
-      org.label-schema.vcs-ref=$VCS_REF
 
 # install Postgres shell & tools
 ENV PG_MAJOR 9.6
