@@ -12,7 +12,7 @@ POSTGRES_PASSWORD="postgres"
 POSTGRES_USER="postgres"
 POSTGRES_DB="postgres"
 
-POSTGRES_IMAGE="postgres:9.6"
+POSTGRES_IMAGE="wetransform/postgis:9.5-2.4"
 
 # run PostgreSQL/PostGIS
 docker stop dockup-postgres-test
