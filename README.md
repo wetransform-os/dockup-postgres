@@ -3,7 +3,7 @@ dockup-postgres
 
 [![Docker Hub Badge](https://img.shields.io/badge/Docker-Hub%20Hosted-blue.svg)](https://hub.docker.com/r/wetransform/dockup-postgres/)
 
-This is based on [dockup-mongo](https://github.com/robbyoconnor/dockup-mongo) (which was based on [dockup-mongo](https://github.com/wetransform-os/dockup-mongo) but for postgres.
+This is based on [dockup-mongo](https://github.com/robbyoconnor/dockup-mongo) (which was based on [dockup-mongo](https://github.com/wetransform-os/dockup-mongo)) but for postgres.
 Docker image to backup/restore your PostgreSQL DB to AWS S3.
 Builds upon [dockup](https://github.com/wetransform-os/dockup).
 
