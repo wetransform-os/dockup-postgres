@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # remove dump
-rm -rf "/dockup/pgdump/${POSTGRES_BACKUP_NAME}"
+rm -rf "${WORK_DIR}/pgdump/${POSTGRES_BACKUP_NAME}"
