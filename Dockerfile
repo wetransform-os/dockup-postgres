@@ -1,4 +1,4 @@
-FROM wetransform/dockup:latest
+FROM wetransform/dockup:20200608
 MAINTAINER Simon Templer <simon@wetransform.to>
 
 # add build info - see hooks/build and https://github.com/opencontainers/image-spec/blob/master/annotations.md
@@ -17,12 +17,11 @@ RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys B97B0AFCAA1A4
 RUN apt-get update && apt-get install -y \
     postgresql-client-$PG_MAJOR
 
-ENV PATHS_TO_BACKUP /dockup/pgdump
-VOLUME ["/dockup/pgdump"]
+ENV PATHS_TO_BACKUP $WORK_DIR/pgdump
 ENV POSTGRES_BACKUP_NAME pgdump
-ENV BEFORE_BACKUP_CMD ./pgdump.sh
-ENV AFTER_BACKUP_CMD ./pgclean.sh
-ENV AFTER_RESTORE_CMD ./pgrestore.sh
+ENV BEFORE_BACKUP_CMD /dockup/pgdump.sh
+ENV AFTER_BACKUP_CMD /dockup/pgclean.sh
+ENV AFTER_RESTORE_CMD /dockup/pgrestore.sh
 ENV POSTGRES_USER postgres
 ENV POSTGRES_HOST db
 ENV POSTGRES_DB postgres
